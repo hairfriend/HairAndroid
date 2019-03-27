@@ -120,6 +120,9 @@ class MainActivity : AppCompatActivity() {
                     //var bitmap: Bitmap = BitmapFactory.decodeFile(mCurrentPhotoPath)
                     uploadImage(auxFile)
                     //imageView.setImageBitmap(bitmap)
+
+                    val intent : Intent = Intent(this,AnswerActivity::class.java)
+                    startActivity(intent)
                 }
                 REQUEST_ALBUM_PICKER -> {
                     if (data != null) {
@@ -129,6 +132,8 @@ class MainActivity : AppCompatActivity() {
                         var albumURI: Uri = Uri.fromFile(albumFile)
                         //val sendFile = File(albumURI)
                         uploadImage(File(albumURI.toString()))
+                        val intent : Intent = Intent(this,AnswerActivity::class.java)
+                        startActivity(intent)
                     }
                     else {
                         finish()
