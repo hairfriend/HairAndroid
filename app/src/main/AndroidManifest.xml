@@ -30,6 +30,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".AnswerActivity"/>
+        <activity android:name=".LoadingActivity"/>
     </application>
 
 

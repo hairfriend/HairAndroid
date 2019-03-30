@@ -121,7 +121,7 @@ class MainActivity : AppCompatActivity() {
                     uploadImage(auxFile)
                     //imageView.setImageBitmap(bitmap)
 
-                    val intent : Intent = Intent(this,AnswerActivity::class.java)
+                    val intent : Intent = Intent(this,LoadingActivity::class.java)
                     startActivity(intent)
                 }
                 REQUEST_ALBUM_PICKER -> {
@@ -132,7 +132,7 @@ class MainActivity : AppCompatActivity() {
                         var albumURI: Uri = Uri.fromFile(albumFile)
                         //val sendFile = File(albumURI)
                         uploadImage(File(albumURI.toString()))
-                        val intent : Intent = Intent(this,AnswerActivity::class.java)
+                        val intent : Intent = Intent(this,LoadingActivity::class.java)
                         startActivity(intent)
                     }
                     else {
