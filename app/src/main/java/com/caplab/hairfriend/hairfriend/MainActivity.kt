@@ -6,7 +6,6 @@ import android.Manifest.permission.READ_EXTERNAL_STORAGE
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
 import android.provider.MediaStore
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
@@ -18,8 +17,7 @@ import android.app.Activity
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
-import android.os.Build
-import android.os.Environment
+import android.os.*
 import android.util.Log
 import com.google.gson.Gson
 import okhttp3.MediaType
@@ -32,6 +30,7 @@ import retrofit2.Retrofit
 import android.os.Environment.getExternalStorageDirectory
 import android.support.v4.content.FileProvider
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main_renew.*
 import java.io.File
 import java.nio.file.Files.createFile
 import java.security.AccessController.getContext
@@ -45,6 +44,11 @@ class MainActivity : AppCompatActivity() {
     val REQUEST_ALBUM_PICKER = 0
     val URL:String = "http://117.16.231.66:7003"
 
+    lateinit var mTask:TimerTask
+    lateinit var mTimer:Timer
+    lateinit var handler:Handler
+    var TextCicle = false
+
 
     private val PERMISSION_REQUEST_CODE: Int = 101
 
@@ -54,9 +58,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main_renew)
 
-        main_btn_album.setOnClickListener {
+        galleryBtn.setOnClickListener {
             val intent = Intent(Intent.ACTION_PICK)
             intent.type = MediaStore.Images.Media.CONTENT_TYPE
             intent.type = "image/*"
@@ -67,10 +71,11 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        main_btn_selfie.setOnClickListener {
+        cameraBtn.setOnClickListener {
             if (checkPersmission()) takePicture() else requestPermission()
         }
     }
+
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         when (requestCode) {
