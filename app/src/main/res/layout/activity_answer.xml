@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/mainImg"
         android:layout_width="match_parent"
         android:layout_height="375dp"
         android:layout_marginTop="21dp"
@@ -15,7 +15,7 @@
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/info_btn"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/womanblack" />
 
     <FrameLayout
         android:id="@+id/frameLayout"

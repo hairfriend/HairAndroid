@@ -3,4 +3,9 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="backGround">#FFE794</color>
+    <color name="titleRed">#f50000</color>
+    <color name="titleBlack">#231212</color>
+    <color name="cornflower">#7074fc</color>
+    <color name="grapefruit">#ff5d5d</color>
 </resources>

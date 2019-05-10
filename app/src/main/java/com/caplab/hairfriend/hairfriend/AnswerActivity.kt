@@ -1,5 +1,6 @@
 package com.caplab.hairfriend.hairfriend
 
+import android.app.Fragment
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -11,6 +12,11 @@ class AnswerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_answer)
+        var sex :String = intent.getStringExtra("sex")
+
+        var BlankFrag : Fragment = Fragment()
+        var args:Bundle = Bundle()
+        args.putString("sex",sex)
 
         val infoBtn = findViewById<Button>(R.id.info_btn)
         supportFragmentManager.beginTransaction()
@@ -18,7 +24,7 @@ class AnswerActivity : AppCompatActivity() {
                 .commit()
 
         infoBtn.setOnClickListener {
-            if(infoOn){
+            if(!infoOn){
                 supportFragmentManager.beginTransaction()
                         .replace(R.id.frameLayout,FragmentInfo())
                         .commit()
@@ -41,6 +47,7 @@ class AnswerActivity : AppCompatActivity() {
 
 
     }
+
 
 
 }

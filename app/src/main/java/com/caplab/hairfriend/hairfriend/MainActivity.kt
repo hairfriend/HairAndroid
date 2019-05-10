@@ -1,5 +1,4 @@
-package com.caplab.hairfriend.hairfriend
-
+/*package com.caplab.hairfriend.hairfriend
 import android.Manifest
 import android.Manifest.permission.CAMERA
 import android.Manifest.permission.READ_EXTERNAL_STORAGE
@@ -29,8 +28,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.Retrofit
 import android.os.Environment.getExternalStorageDirectory
 import android.support.v4.content.FileProvider
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_main_renew.*
+import kotlinx.android.synthetic.main.activity_selectca.*
 import java.io.File
 import java.nio.file.Files.createFile
 import java.security.AccessController.getContext
@@ -58,9 +59,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_renew)
+        setContentView(R.layout.activity_selectca)
 
-        galleryBtn.setOnClickListener {
+        gallery_btn.setOnClickListener {
             val intent = Intent(Intent.ACTION_PICK)
             intent.type = MediaStore.Images.Media.CONTENT_TYPE
             intent.type = "image/*"
@@ -71,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        cameraBtn.setOnClickListener {
+        camera_btn.setOnClickListener {
             if (checkPersmission()) takePicture() else requestPermission()
         }
     }
@@ -87,7 +88,7 @@ class MainActivity : AppCompatActivity() {
                     takePicture()
 
                 } else {
-                    Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show()
                 }
                 return
             }
@@ -114,8 +115,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (resultCode == Activity.RESULT_OK) {
-
+        var selectSex : String = ""
             when ( requestCode){
                 REQUEST_IMAGE_CAPTURE ->{
                     //To get the File for further usage
@@ -127,6 +127,9 @@ class MainActivity : AppCompatActivity() {
                     //imageView.setImageBitmap(bitmap)
 
                     val intent : Intent = Intent(this,LoadingActivity::class.java)
+                    Log.d("select",selectSex.toString())
+
+                    intent.putExtra("sex",selectSex)
                     startActivity(intent)
                 }
                 REQUEST_ALBUM_PICKER -> {
@@ -138,6 +141,9 @@ class MainActivity : AppCompatActivity() {
                         //val sendFile = File(albumURI)
                         uploadImage(File(albumURI.toString()))
                         val intent : Intent = Intent(this,LoadingActivity::class.java)
+                        Log.d("select",selectSex.toString())
+
+                        intent.putExtra("sex",selectSex)
                         startActivity(intent)
                     }
                     else {
@@ -220,3 +226,4 @@ class MainActivity : AppCompatActivity() {
 
 
 }
+*/

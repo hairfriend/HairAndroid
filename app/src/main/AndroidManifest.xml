@@ -22,7 +22,9 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/filepaths" />
         </provider>
-        <activity android:name=".MainActivity">
+        <activity android:name=".selectActivity"/>
+        <activity android:name=".cameraActivity"/>
+        <activity android:name=".GenderActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
