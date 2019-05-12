@@ -9,14 +9,17 @@ import android.widget.Button
 var infoOn :Boolean = false
 
 class AnswerActivity : AppCompatActivity() {
+    companion object {
+        var hairColor = "black"
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_answer)
-        var sex :String = intent.getStringExtra("sex")
+//        var sex :String = intent.getStringExtra("sex")
 
         var BlankFrag : Fragment = Fragment()
         var args:Bundle = Bundle()
-        args.putString("sex",sex)
+  //      args.putString("sex",sex)
 
         val infoBtn = findViewById<Button>(R.id.info_btn)
         supportFragmentManager.beginTransaction()

@@ -12,12 +12,14 @@ class GenderActivity : AppCompatActivity(){
 
         man_btn.setOnClickListener {
             val intent : Intent = Intent(this,selectActivity::class.java)
-            intent.putExtra("gender","man")
+            val gender : String = "man"
+            intent.putExtra("gender",gender)
             startActivity(intent)
         }
         woman_btn.setOnClickListener {
             val intent: Intent = Intent(this,selectActivity::class.java)
-            intent.putExtra("gender","woman")
+            val gender : String = "woman"
+            intent.putExtra("gender",gender)
             startActivity(intent)
         }
     }

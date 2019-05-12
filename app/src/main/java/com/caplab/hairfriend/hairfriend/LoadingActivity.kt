@@ -18,7 +18,7 @@ class LoadingActivity :AppCompatActivity() {
         setContentView(R.layout.activity_loading)
 
 
-        var sex : String = intent.getStringExtra("sex")
+//        var sex : String = intent.getStringExtra("sex")
 
         val frameAnimation = loading_iv.background as AnimationDrawable
         loading_iv.post(Runnable { frameAnimation.start() })
@@ -26,7 +26,7 @@ class LoadingActivity :AppCompatActivity() {
          mTask = object : TimerTask() {
             override fun run() {
                 val intent = Intent(applicationContext, AnswerActivity::class.java)
-                intent.putExtra("sex",sex)
+                //intent.putExtra("sex",sex)
                 startActivity(intent)
             }
         }
