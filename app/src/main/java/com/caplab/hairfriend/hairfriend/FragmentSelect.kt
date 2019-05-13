@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.caplab.hairfriend.hairfriend.AnswerActivity.Companion.hairColor
 import kotlinx.android.synthetic.main.activity_answer.*
 import kotlinx.android.synthetic.main.activity_answer.view.*
@@ -29,18 +30,30 @@ class FragmentSelect: Fragment() {
         var blondBtn = view.findViewById(R.id.constraintLayout3) as ConstraintLayout
 
         blackBtn.setOnClickListener{
-            Glide.with(this).load("http://39.120.195.230:7003/imageLoad/00001.jpg").into(activity?.mainImg)
+            Glide.with(this)
+                    .load("http://39.120.195.230:7003/imageLoad/00001.jpg")
+                    .skipMemoryCache(true)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .into(activity?.mainImg)
             hairColor = "black"
             //activity?.mainImg?.setImageResource(R.drawable.womanblack)
         }
         brownBtn.setOnClickListener{
-            Glide.with(this).load("http://39.120.195.230:7003/imageLoad/00003.jpg").into(activity?.mainImg)
+            Glide.with(this)
+                    .load("http://39.120.195.230:7003/imageLoad/00003.jpg")
+                    .skipMemoryCache(true)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .into(activity?.mainImg)
             hairColor = "brown"
             //activity?.mainImg?.setImageResource(R.drawable.womanbrown)
         }
 
         blondBtn.setOnClickListener {
-            Glide.with(this).load("http://39.120.195.230:7003/imageLoad/00002.jpg").into(activity?.mainImg)
+            Glide.with(this)
+                    .load("http://39.120.195.230:7003/imageLoad/00002.jpg")
+                    .skipMemoryCache(true)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .into(activity?.mainImg)
             hairColor = "blond"
             //activity?.mainImg?.setImageResource(R.drawable.womanblond)
         }
