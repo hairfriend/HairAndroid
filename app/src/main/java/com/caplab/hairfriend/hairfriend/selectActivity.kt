@@ -150,7 +150,7 @@ class selectActivity : AppCompatActivity() {
 
             cropIntent.putExtra("output",ResultUri)
             startActivityForResult(cropIntent,CODE_CROP_FROM_CAMERA)
-            startActivity(intent)
+            startActivity(cropIntent)
         }
         else if(requestCode == CODE_CROP_FROM_CAMERA){
             if(ResultUri != null){

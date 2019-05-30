@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_loading.*
 import android.graphics.drawable.AnimationDrawable
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import java.util.*
 
 
@@ -18,10 +19,21 @@ class LoadingActivity :AppCompatActivity() {
         setContentView(R.layout.activity_loading)
 
 
-//        var sex : String = intent.getStringExtra("sex")
 
-        val frameAnimation = loading_iv.background as AnimationDrawable
-        loading_iv.post(Runnable { frameAnimation.start() })
+//        var sex : String = intent.getStringExtra("sex")
+        //imageView.setImageDrawable(getResource().getDrawable(R.drawable.animation);
+        //AnimationDrawable animation = (AnimationDrawable)imageView.getDrawable();
+        //animation.start();
+
+
+        loading_iv.setImageDrawable(resources.getDrawable(R.drawable.loading))
+        var animation : AnimationDrawable = loading_iv.drawable as AnimationDrawable
+
+        //val frameAnimation = loading_layer.background as AnimationDrawable
+        //var drawable: Drawable = resources.getDrawable(R.drawable.loading)
+        //loading_iv.post(Runnable { frameAnimation.start() })
+
+        animation.start()
 
          mTask = object : TimerTask() {
             override fun run() {

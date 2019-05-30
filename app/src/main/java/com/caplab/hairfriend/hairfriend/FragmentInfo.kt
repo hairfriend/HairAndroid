@@ -22,6 +22,8 @@ class FragmentInfo: Fragment() {
         val view = inflater.inflate(R.layout.fragment_color_info,null)
         var infoiv = view.findViewById<ImageView>(R.id.info_iv)
         var infotvName = view.findViewById<TextView>(R.id.product_name_tv)
+        var infotvBrand = view.findViewById<TextView>(R.id.product_brand_tv)
+        var infotvPrice = view.findViewById<TextView>(R.id.product_price_tv)
         when (hairColor) {
             "black" -> {
                 Glide.with(this)
@@ -30,7 +32,9 @@ class FragmentInfo: Fragment() {
                         .diskCacheStrategy(DiskCacheStrategy.NONE)
                         .into(activity?.mainImg)
                 infoiv.setImageResource(R.drawable.blackcoloring)
-                infotvName.text = "염색약 정보 : 미장센 헬로버블(블랙) 염색약"
+                infotvName.text = "염색약 정보 : 헬로버블(블랙) 염색약"
+                infotvBrand.text = "제조사 : 미장선"
+                infotvPrice.text = "가격 : 5500원"
             }
             "brown" -> {
                 Glide.with(this)
@@ -39,7 +43,9 @@ class FragmentInfo: Fragment() {
                         .diskCacheStrategy(DiskCacheStrategy.NONE)
                         .into(activity?.mainImg)
                 infoiv.setImageResource(R.drawable.browncoloring)
-                infotvName.text = "염색약 정보 : 미장센 헬로버블(브라운) 염색약"
+                infotvName.text = "염색약 정보 : 헬로버블(브라운) 염색약"
+                infotvBrand.text = "제조사 : 미장선"
+                infotvPrice.text = "가격 : 5500원"
             }
             "blond" -> {
                 Glide.with(this)
@@ -48,7 +54,9 @@ class FragmentInfo: Fragment() {
                         .diskCacheStrategy(DiskCacheStrategy.NONE)
                         .into(activity?.mainImg)
                 infoiv.setImageResource(R.drawable.blondcoloring)
-                infotvName.text = "염색약 정보 : 미장센 헬로버블(금발) 염색약"
+                infotvName.text = "염색약 정보 : 헬로버블(금발) 염색약"
+                infotvBrand.text = "제조사 : 미장선"
+                infotvPrice.text = "가격 : 5500원"
             }
         }
         return view
